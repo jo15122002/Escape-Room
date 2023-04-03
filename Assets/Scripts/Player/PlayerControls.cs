@@ -6,7 +6,6 @@ public class PlayerControls : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float forwardForce = 0f;
-    [SerializeField] float sidewaysForce = 10f;
     [SerializeField] float jumpForce = 10f;
 
     private bool enabled = true;

@@ -21,10 +21,9 @@ public class PlayerCamera : MonoBehaviour
         //Rotate the camera on x with the player rotation
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, player.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
+        //rotate the camera with the mouse
         float mouseY = Input.GetAxis("Mouse Y");
         float nextPos = transform.rotation.eulerAngles.x - mouseY;
-        //rotate the camera with the mouse
-        Debug.Log(transform.rotation.eulerAngles.x);
         if((nextPos <= 89) || (nextPos >= 270))
         {
             transform.Rotate(-mouseY, 0, 0);
