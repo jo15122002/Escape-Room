@@ -20,51 +20,29 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb.AddForce(new Vector3(0,400,1000));
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enabled)
-        {
-            zPressed = Input.GetKey(KeyCode.Z);
-            sPressed = Input.GetKey(KeyCode.S);
-            qPressed = Input.GetKey(KeyCode.Q);
-            dPressed = Input.GetKey(KeyCode.D);
-            spacePressed = Input.GetKeyDown(KeyCode.Space);
-        }
-        else
-        {
-            zPressed = false;
-            sPressed = false;
-            qPressed = false; 
-            dPressed = false;
-            spacePressed = false;
-        }
-
-
+        //rotate the player with the mouse
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        transform.Rotate(0, mouseX, 0);
     }
 
     private void FixedUpdate()
     {
         //ZQSD player controls
-        if (zPressed)
-        {
-            rb.AddForce(new Vector3(0, 0, forwardForce * Time.deltaTime), ForceMode.VelocityChange);
-        }
-        if (sPressed)
-        {
-            rb.AddForce(new Vector3(0, 0, -forwardForce * Time.deltaTime), ForceMode.VelocityChange);
-        }
-        if (qPressed)
-        {
-            rb.AddForce(new Vector3(-sidewaysForce * Time.deltaTime, 0, 0), ForceMode.VelocityChange);
-        }
-        if (dPressed)
-        {
-            rb.AddForce(new Vector3(sidewaysForce * Time.deltaTime, 0, 0), ForceMode.VelocityChange);
-        }
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        movement = Camera.main.transform.TransformDirection(movement);
+        movement.y = 0.0f;
+
+        transform.position += movement * forwardForce * Time.deltaTime;
 
         //Jump
         if (spacePressed)
