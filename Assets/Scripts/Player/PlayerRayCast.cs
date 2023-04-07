@@ -21,7 +21,7 @@ public class PlayerRayCast : MonoBehaviour
         //shoot a raycast where the player is looking
         if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out hit, rayDistance))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
         }
         
     }
