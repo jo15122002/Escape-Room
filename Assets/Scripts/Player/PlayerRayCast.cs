@@ -21,12 +21,14 @@ public class PlayerRayCast : MonoBehaviour
         //shoot a raycast where the player is looking
         if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out hit, rayDistance))
         {
-            if(hit.collider.tag == "LightSwitch")
+            switch (hit.collider.tag)
             {
-                if(Input.GetKeyDown(KeyCode.E))
-                {
-                    hit.collider.GetComponent<LightButton>().ToggleLights();
-                }
+                case ("LightSwitch"):
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        hit.collider.GetComponent<LightButton>().ToggleLights();
+                    }
+                    break;
             }
         }
         
