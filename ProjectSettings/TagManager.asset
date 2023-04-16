@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - LightSwitch
+  - OtherButton
   layers:
   - Default
   - TransparentFX

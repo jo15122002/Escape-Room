@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 using UnityEngine;
 
 public class PlayerRayCast : MonoBehaviour
@@ -21,14 +24,20 @@ public class PlayerRayCast : MonoBehaviour
         //shoot a raycast where the player is looking
         if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out hit, rayDistance))
         {
-            switch (hit.collider.tag)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                case ("LightSwitch"):
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
+                switch (hit.collider.tag)
+                {
+                    case ("LightSwitch"):
                         hit.collider.GetComponent<LightButton>().ToggleLights();
-                    }
-                    break;
+                        break;
+                    case ("OtherButton"):
+                        Type componentType = Type.GetType(hit.collider.name);
+                        UnityEngine.Component component = hit.collider.GetComponent(componentType);
+                        MethodInfo activateMethod = componentType.GetMethod("activate");
+                        activateMethod.Invoke(component, null);
+                        break;
+                }
             }
         }
         
