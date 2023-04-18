@@ -28,6 +28,9 @@ public class TutorialRoom1stButton : MonoBehaviour
 
         HelpText.GetHelpText().writeUIText("Wow le mur descend !");
 
+        Camera cam = Camera.main;
+        cam.GetComponent<PlayerCamera>().shake();
+
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;

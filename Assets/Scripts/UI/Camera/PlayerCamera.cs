@@ -9,18 +9,18 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = player.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //put the camera at the player's position
+        /*//put the camera at the player's position
         transform.position = player.position;
 
         //Rotate the camera on x with the player rotation
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, player.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
+        */
         //rotate the camera with the mouse
         float mouseY = Input.GetAxis("Mouse Y");
         float nextPos = transform.rotation.eulerAngles.x - mouseY;
@@ -28,5 +28,30 @@ public class PlayerCamera : MonoBehaviour
         {
             transform.Rotate(-mouseY, 0, 0);
         }
+    }
+
+    public void shake()
+    {
+        StartCoroutine(Shake(5f, 0.1f));
+    }
+
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        Vector3 originalPosition = transform.localPosition;
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            transform.localPosition = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.localPosition = originalPosition;
     }
 }
