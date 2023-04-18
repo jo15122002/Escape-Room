@@ -30,9 +30,9 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    public void shake()
+    public void shake(float duration, float magnitude)
     {
-        StartCoroutine(Shake(5f, 0.1f));
+        StartCoroutine(Shake(duration, magnitude));
     }
 
     public IEnumerator Shake(float duration, float magnitude)
