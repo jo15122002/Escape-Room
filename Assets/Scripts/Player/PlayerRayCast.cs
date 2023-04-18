@@ -28,9 +28,6 @@ public class PlayerRayCast : MonoBehaviour
             {
                 switch (hit.collider.tag)
                 {
-                    case ("LightSwitch"):
-                        hit.collider.GetComponent<LightButton>().ToggleLights();
-                        break;
                     case ("OtherButton"):
                         Type componentType = Type.GetType(hit.collider.name);
                         UnityEngine.Component component = hit.collider.GetComponent(componentType);
