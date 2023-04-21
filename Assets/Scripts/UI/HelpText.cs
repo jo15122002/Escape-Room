@@ -48,10 +48,15 @@ public class HelpText : MonoBehaviour
             {
                 yield return new WaitForSeconds(7f);
             }
-            else
+            else if (text.Split(' ').Length > 6)
             {
                 yield return new WaitForSeconds(5f);
             }
+            else
+            {
+                yield return new WaitForSeconds(3f);
+            }
+
             uiText.text = "";
             textsToWrite.RemoveAt(0);
         }

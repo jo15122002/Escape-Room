@@ -34,6 +34,10 @@ public class PlayerRayCast : MonoBehaviour
                         MethodInfo activateMethod = componentType.GetMethod("activate");
                         activateMethod.Invoke(component, null);
                         break;
+                    case ("CollectibleObject"):
+                        PlayerManager.Instance.inventory.Add(hit.collider.name);
+                        hit.collider.gameObject.SetActive(false);
+                        break;
                 }
             }
         }

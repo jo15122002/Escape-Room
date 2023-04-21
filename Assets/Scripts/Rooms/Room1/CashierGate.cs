@@ -7,7 +7,7 @@ public class CashierGate : MonoBehaviour
     [SerializeField] private GameObject cashierGate;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && PlayerManager.Instance.inventory.Count == 10)
         {
             StartCoroutine(OpenGate());
         }

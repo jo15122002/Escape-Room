@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - OtherButton
+  - CollectibleObject
   layers:
   - Default
   - TransparentFX
