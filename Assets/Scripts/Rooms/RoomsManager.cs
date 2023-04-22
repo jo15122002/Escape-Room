@@ -6,12 +6,6 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class RoomsManager : MonoBehaviour
 {
-    private float duration = 5.0f;
-    private float distance = 0f;
-
-    private float startIntensity = 24f;
-    private float endIntensity = 0f;
-
     private static RoomsManager _instance;
 
     public static RoomsManager GetInstance()
