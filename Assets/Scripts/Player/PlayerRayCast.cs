@@ -38,6 +38,9 @@ public class PlayerRayCast : MonoBehaviour
                         PlayerManager.Instance.inventory.Add(hit.collider.name);
                         hit.collider.gameObject.SetActive(false);
                         break;
+                    case ("UselessBooks"):
+                        HelpText.GetHelpText().writeUIText(Room2Manager.Instance.getRandomUselessBookText());
+                        break;
                 }
             }
         }

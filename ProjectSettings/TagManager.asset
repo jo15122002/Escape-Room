@@ -7,6 +7,8 @@ TagManager:
   - Button
   - OtherButton
   - CollectibleObject
+  - UselessBooks
+  - UsefulBook
   layers:
   - Default
   - TransparentFX
