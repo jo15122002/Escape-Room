@@ -41,6 +41,12 @@ public class PlayerRayCast : MonoBehaviour
                     case ("UselessBooks"):
                         HelpText.GetHelpText().writeUIText(Room2Manager.Instance.getRandomUselessBookText());
                         break;
+                    case ("UsefulBook"):
+                        HelpText.GetHelpText().writeUIText(Room2Manager.Instance.getUsefulBookHint(hit.collider.name));
+                        break;
+                    case ("KeyBook"):
+                        Room2Manager.Instance.cycleKeyBook(hit.collider.gameObject);
+                        break;
                 }
             }
         }

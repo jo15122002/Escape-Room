@@ -9,6 +9,7 @@ TagManager:
   - CollectibleObject
   - UselessBooks
   - UsefulBook
+  - KeyBook
   layers:
   - Default
   - TransparentFX
