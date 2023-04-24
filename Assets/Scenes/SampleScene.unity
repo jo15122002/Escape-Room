@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.125
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.021596055, g: 0.026986558, b: 0.037228286, a: 0.125}
+  m_IndirectSpecularColor: {r: 0.021596055, g: 0.026986556, b: 0.037228286, a: 0.125}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2445,7 +2445,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_Name
-      value: keybook0
+      value: keybook3
       objectReference: {fileID: 0}
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_TagString
@@ -3263,7 +3263,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_Name
-      value: keybook3
+      value: keybook0
       objectReference: {fileID: 0}
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_TagString
@@ -5163,7 +5163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_Name
-      value: keybook1
+      value: keybook2
       objectReference: {fileID: 0}
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_TagString
@@ -13272,7 +13272,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_Name
-      value: keybook2
+      value: keybook1
       objectReference: {fileID: 0}
     - target: {fileID: 166240, guid: 9e9f85b371bfa1947aa70da2f90a151c, type: 3}
       propertyPath: m_TagString

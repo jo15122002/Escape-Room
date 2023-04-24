@@ -81,7 +81,7 @@ public class Room2Manager : MonoBehaviour
             "Chapitre 1 : Il faisait beau, le ciel est BLEU.",
             "Chapitre 2 : Le temps est chaud, les coquilecots ROUGES fleurissent par milliers.",
             "Chapitre 3 : Avec la formule magique, il a OUVERT la porte.",
-            "Chapitre 4 : "
+            "Chapitre 4 : Malgré le sermonnage, il se tenait DROIT DEBOUT"
         };
 
         return hints[int.Parse(objectName.Substring(objectName.Length - 1))];
@@ -110,36 +110,36 @@ public class Room2Manager : MonoBehaviour
 
     private void checkBookOrder()
     {
-        bool correctBookOrder = false;
         if(correctBookCyclePositions.Count == 0)
         {
             this.initializeCorrectBookOrder();
         }
-        Debug.Log("Checking book order");
-        Debug.Log("Correct book order : " + correctBookCyclePositions);
-        Debug.Log("Current book order : " + bookCyclePositions);
 
-        foreach (var book in correctBookCyclePositions)
+        if(bookCyclePositions.Count == correctBookCyclePositions.Count)
         {
-            
-        }
+            bool correctBookOrder = true;
+            for (int i = 0; i < (int)correctBookCyclePositions.Count; i++)
+            {
+                string key = "keybook" + i;
+                correctBookOrder = correctBookOrder && (bookCyclePositions[key].Equals(correctBookCyclePositions[key]));
+            }
 
-        if ()
-        {
-            Debug.Log("Correct book order");
-            loadRoom3Button.SetActive(true);
-        }
-        else
-        {
-            loadRoom3Button.SetActive(false);
+            if (correctBookOrder)
+            {
+                loadRoom3Button.SetActive(true);
+            }
+            else
+            {
+                loadRoom3Button.SetActive(false);
+            }
         }
     }
 
     private void initializeCorrectBookOrder()
     {
-        correctBookCyclePositions.Add("keyBook0", 0);
-        correctBookCyclePositions.Add("keyBook1", 1);
-        correctBookCyclePositions.Add("keyBook2", 2);
-        correctBookCyclePositions.Add("keyBook3", 3);
+        correctBookCyclePositions.Add("keybook0", 0);
+        correctBookCyclePositions.Add("keybook1", 1);
+        correctBookCyclePositions.Add("keybook2", 2);
+        correctBookCyclePositions.Add("keybook3", 3);
     }
 }
