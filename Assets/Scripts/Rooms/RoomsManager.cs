@@ -38,9 +38,9 @@ public class RoomsManager : MonoBehaviour
 
     public void Start()
     {
-        StoreRoom(1);
+        /*StoreRoom(1);
         StoreRoom(2);
-        StoreRoom(3);
+        StoreRoom(3);*/
     }
 
     public void LoadRoom(int roomId)

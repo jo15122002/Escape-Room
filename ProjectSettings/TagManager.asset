@@ -10,6 +10,7 @@ TagManager:
   - UselessBooks
   - UsefulBook
   - KeyBook
+  - Obstacle
   layers:
   - Default
   - TransparentFX

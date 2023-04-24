@@ -8,8 +8,6 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float forwardForce = 0f;
     [SerializeField] float jumpForce = 10f;
 
-    private bool enabled = true;
-
     private bool zPressed;
     private bool sPressed;
     private bool qPressed;
@@ -41,7 +39,7 @@ public class PlayerControls : MonoBehaviour
         movement = Camera.main.transform.TransformDirection(movement);
         movement.y = 0.0f;
 
-        transform.position += movement * forwardForce * Time.deltaTime;
+        transform.GetComponent<Rigidbody>().AddForce(movement * forwardForce * Time.deltaTime, ForceMode.VelocityChange);
 
         //Jump
         if (spacePressed)
