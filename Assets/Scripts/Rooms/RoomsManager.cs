@@ -36,9 +36,17 @@ public class RoomsManager : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        StoreRoom(1);
+        StoreRoom(2);
+        StoreRoom(3);
+    }
+
     public void LoadRoom(int roomId)
     {
         GameObject room = GameObject.Find("Room" + roomId);
+        Debug.Log(room);
         room.SetActive(true);
 
         if(roomId%2 == 1)
@@ -74,7 +82,7 @@ public class RoomsManager : MonoBehaviour
             return;
         }
         room.transform.position = new Vector3(23.2f, 7*roomId+2*roomId+1, -12.7f);
-        room.SetActive(false);
+        //room.SetActive(false);
     }
 
     private IEnumerator DescendWall(Transform wall)

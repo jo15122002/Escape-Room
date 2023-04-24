@@ -10,8 +10,7 @@ public class LoadRoom3Button : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void activate()
     {
         RoomsManager.GetInstance().LoadRoom(3);
     }

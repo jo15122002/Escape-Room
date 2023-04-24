@@ -8,8 +8,8 @@ public class StartScript : MonoBehaviour
     void Start()
     {
         //set the player at the start of the game
-        /*transform.position = new Vector3(-0.8f, 1.49f, -4.93f);
-        transform.rotation = new Quaternion(0,180,0,0);*/
+        transform.position = new Vector3(-0.8f, 1.49f, -4.93f);
+        transform.rotation = new Quaternion(0,180,0,0);
 
         HelpText helpText = HelpText.GetHelpText();
         helpText.writeUIText("Bienvenue dans mon jeu!");
