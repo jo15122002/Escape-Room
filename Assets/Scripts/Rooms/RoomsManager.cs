@@ -46,7 +46,6 @@ public class RoomsManager : MonoBehaviour
     public void LoadRoom(int roomId)
     {
         GameObject room = GameObject.Find("Room" + roomId);
-        Debug.Log(room);
         room.SetActive(true);
 
         if(roomId%2 == 1)
