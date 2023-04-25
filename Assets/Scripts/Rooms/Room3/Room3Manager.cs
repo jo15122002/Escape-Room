@@ -19,6 +19,7 @@ public class Room3Manager : MonoBehaviour
 
     [SerializeField] private GameObject room;
     [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private ObstacleSpawnerManager spawnerManager;
 
     public float countdown = 60f;
 
@@ -94,7 +95,7 @@ public class Room3Manager : MonoBehaviour
         {
             time = countdown;
             currentTime += Time.deltaTime;
-            objectToScale.transform.localScale = Vector3.Lerp(startScale, scale, currentTime / time);
+            objectToScale.transform.localScale = Vector3.Lerp(startScale, new Vector3(1,1, scale.z * (4 / 60) * countdown), currentTime / time);
             yield return null;
         }
         objectToScale.transform.localScale = scale;
@@ -112,7 +113,9 @@ public class Room3Manager : MonoBehaviour
 
         StartCoroutine(setWallsInBlack());
 
+        spawnerManager.enabled = true;
         gameStarted = true;
+        RoomsManager.GetInstance().StoreRoom(2);
         StartCoroutine(ScaleOverCountdown(room, Vector3.one));
     }
 

@@ -7,6 +7,8 @@ public class ObstacleSpawnerManager : MonoBehaviour
     private float elapsedTime = 0f;
     private float spawnTime = 2f;
 
+    public bool enabled = false;
+
     [SerializeField] List<ObstacleSpawner> obstacleSpawners;
     // Start is called before the first frame update
     void Start()
@@ -22,11 +24,14 @@ public class ObstacleSpawnerManager : MonoBehaviour
         if (elapsedTime >= spawnTime)
         {
             int randomIndex = Random.Range(0, obstacleSpawners.Count);
-            for(int i = 0; i < obstacleSpawners.Count; i++)
+            if(enabled)
             {
-                if(i != randomIndex)
+                for(int i = 0; i < obstacleSpawners.Count; i++)
                 {
-                    obstacleSpawners[i].SpawnObstacle();
+                    if(i != randomIndex)
+                    {
+                        obstacleSpawners[i].SpawnObstacle();
+                    }
                 }
             }
             elapsedTime = 0f;

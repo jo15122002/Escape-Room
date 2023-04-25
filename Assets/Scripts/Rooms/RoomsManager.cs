@@ -74,7 +74,7 @@ public class RoomsManager : MonoBehaviour
         }
     }
 
-    private void StoreRoom(int roomId)
+    public void StoreRoom(int roomId)
     {
         GameObject room = GameObject.Find("Room" + roomId);
         if(room == null)

@@ -8,8 +8,11 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void SpawnObstacle()
     {
-        GameObject instance = Instantiate(obstacle, transform.position, transform.rotation);
+        if(enabled)
+        {
+            GameObject instance = Instantiate(obstacle, transform.position, transform.rotation);
 
-        instance.AddComponent<ObstacleBehavior>();
+            instance.AddComponent<ObstacleBehavior>();
+        }
     }
 }
